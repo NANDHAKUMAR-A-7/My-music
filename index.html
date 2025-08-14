@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎵 My Playlist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+        <h1>🎵 Songs'S</h1>
+    </header>
+
+<section>
+
+   <center>
+    <div id="songslist">
+        <h1>🎵 My Playlist</h1><br><hr><br>
+     <div>
+       <ol id="playlist"></ol>
+     </div>
+    </div>
+   </center>
+</section>
+
+<section>
+    <!-- Audio Player -->
+    <div id="audiocon">
+      <div class="controls" id="controls">
+      <button id="prevBtn">⏮ Prev</button>
+      <button id="playPauseBtn">▶ Play</button>
+      <button id="nextBtn">⏭ Next</button>
+      <button id="volUpBtn">🔊 Vol +</button>
+      <button id="volDownBtn">🔉 Vol -</button><br>
+      <audio id="player" controls></audio>
+    </div>
+</section>
+
+    <footer>
+        <h3>
+            @ Thanks for Listening ...
+        </h3><br>
+        <h4>
+            We will add more songs in future
+        </h4>
+    </footer>
+    <script defer src="script.js"></script>
+     <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js")
+          .then(() => console.log("✅ Service Worker registered"))
+          .catch(err => console.error("SW registration failed:", err));
+      }
+    </script>
+  </body>
+</html>

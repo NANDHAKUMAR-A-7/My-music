@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+
+header {
+    color: white;
+  padding: 15px;
+  width: 100%;
+  height: fit-content;
+  position: fixed;
+  background-color: black;
+}
+
+.controls button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #666;
+}
+
+/* #player {
+    padding: 10px;
+  bottom: 6rem;
+  left: 2rem;
+  position: fixed;
+  background-color: rgb(5, 255, 5);
+} */
+
+#audiocon {
+  left: 2rem;
+  bottom: 1rem;
+  right: 2rem;
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  background-color: brown;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#prevBtn {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#playPauseBtn {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#nextBtn {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#volUpBtn {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#volDownBtn {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#songslist {
+  width: fit-content;
+  height: auto;
+  padding: 65px;
+  font-size: x-large;
+  color: white;
+  background-color: black;
+}
+
+ol {
+  width: fit-content;
+  height: fit-content;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+}
+
+li {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+li:hover {
+  background: #222;
+}
+
+li.active {
+  color: yellow;
+}
+
+audio {
+  width: 70%;
+  padding: 10px;
+}
+
+footer{
+    text-align: center;
+    height: 300px;
+    padding: 100px;
+    background-color: gray;
+}
