@@ -362,4 +362,4 @@ player.addEventListener("ended", () => {
 // Start with first song
 playSong(currentSongIndex);
 
-alert("Enjoy the music without ADD'S");
+// alert("Enjoy the music without ADD'S");

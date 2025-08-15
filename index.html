@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🎵 Web Music</title>
+    <title>Web Music</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/image.png">
   </head>
   <body>
     <header>
-        <h1>🎵 Songs'S</h1>
-        <h3>Add Free Musics</h3>
+        <h1 style="padding: 5px; letter-spacing: 2px;"> <img src="images/image.png" style="width: 30px; height: 25px;">Songs'S</h1>
     </header>
 
 <section>
 
    <center>
     <div id="songslist">
-        <h1>🎵 My Playlist</h1><br><hr><br>
+        <h1>🎵 Playlist</h1><br><br>
+        <h3 style="letter-spacing: 2px; font-family:monospace;"><span1>add's</span1> <span>Free Musics</span></h3><br><hr><br>
      <div>
        <ol id="playlist"></ol>
      </div>
@@ -33,7 +34,7 @@
       <button id="nextBtn">⏭ Next</button>
       <button id="volUpBtn">🔊 Vol +</button>
       <button id="volDownBtn">🔉 Vol -</button><br>
-      <audio id="player" controls></audio>
+      <audio id="player" style="height: 30px;" controls></audio>
     </div>
 </section>
 <section style="display:none ;">
@@ -43,12 +44,16 @@
 </section>
 
     <footer>
+      <br><br><br>
         <h3>
             @ Thanks for Listening ...
         </h3><br>
         <h4>
             We will add more songs in future
-        </h4>
+        </h4><br>
+        <p>
+          <img src="images/image.png" style="width: 100px; height: 100px;">
+        </p>
     </footer>
     <script defer src="script.js"></script>
   </body>
