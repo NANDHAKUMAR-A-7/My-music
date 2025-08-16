@@ -1,137 +1,129 @@
 * {
-  padding: 0;
   margin: 0;
-  font-family: monospace;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  background: black;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000);
+  color: #fff;
+  text-align: center;
+  padding-bottom: 140px; /* space so footer doesn’t overlap controls */
 }
 
 header {
-    color: white;
-  padding: 15px;
-  width: 100%;
-  height: fit-content;
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: bold;
+}
+
+section {
+  margin: 30px auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* Playlist Section */
+#songslist {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+#songslist h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+#songslist h3 {
+  font-size: 18px;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+#playlist {
+  list-style: decimal-leading-zero;
+  text-align: left;
+  margin-left: 20px;
+}
+
+#playlist li {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#playlist li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* Audio Controls - Fixed at Bottom */
+#audiocon {
   position: fixed;
-  background-color: black;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }
 
 .controls button {
-  padding: 10px 15px;
   margin: 5px;
+  padding: 12px 20px;
   border: none;
-  background: black;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff0080, #7928ca);
   color: white;
-  border-radius: 5px;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .controls button:hover {
-  background: #666;
-}
-
-/* #player {
-    padding: 10px;
-  bottom: 6rem;
-  left: 2rem;
-  position: fixed;
-  background-color: rgb(5, 255, 5);
-} */
-
-#audiocon {
-  left: 2rem;
-  bottom: 1rem;
-  right: 2rem;
-  position: fixed;
-  width: fit-content;
-  height: fit-content;
-  padding: 20px;
-  background-color: brown;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#prevBtn {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#playPauseBtn {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#nextBtn {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#volUpBtn {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#volDownBtn {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-#songslist {
-  width: fit-content;
-  height: auto;
-  padding: 65px;
-  font-size: x-large;
-  color: white;
-  background-color: black;
-}
-
-ol {
-  width: fit-content;
-  height: fit-content;
-  text-align: left;
-  width: fit-content;
-  height: fit-content;
-}
-
-li {
-  padding: 5px;
-  cursor: pointer;
-  border-bottom: 3px solid #333;
-}
-
-li:hover {
-  background: #222;
-}
-
-li.active {
-  color: yellow;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 15px rgba(255, 0, 150, 0.5);
 }
 
 audio {
-  width: 70%;
-  padding: 10px;
+  margin-top: 10px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
 }
 
-span{
-  color: rgb(0, 255, 0);
+footer {
+  margin-top: 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 14px;
+  color: #aaa;
 }
 
-span1{
-  color: red;
-}
-
-footer{
-    text-align: center;
-    width: auto;
-    height: 350px;
-    background-color: gray;
+footer img {
+  margin-top: 15px;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
 }
