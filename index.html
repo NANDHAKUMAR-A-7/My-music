@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Music</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="images/image.png" />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#1DB954" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Music</title>
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" href="images/image.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Theme Colors -->
+  <!-- Default -->
+  <meta name="theme-color" content="#111111">
+  <!-- Light Mode -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <!-- Dark Mode -->
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+</head>
+
+
   </head>
   <body>
     <header>
@@ -25,20 +40,6 @@
     <section>
 
     <div id="list1">
-      <div id="songslist1" style="display: none;">
-
-           <h4>Mixed songs</h4>
-
-      </div>
-       <div id="songslist" >
-        <h1>🎵 Playlist</h1>
-        <hr />
-        <br />
-        <div>
-          <ol id="playlist">
-          </ol>
-        </div>
-      </div><br><br>
 
        <div id="songslist">
         <h1>🎵 Vijay Hits</h1>
@@ -46,6 +47,16 @@
         <br />
         <div>
           <ol id="playlist1">
+          </ol>
+        </div>
+      </div><br><br>
+      
+       <div id="songslist" >
+        <h1>Mixed songs</h1>
+        <hr />
+        <br />
+        <div>
+          <ol id="playlist">
           </ol>
         </div>
       </div><br><br>
