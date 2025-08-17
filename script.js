@@ -484,6 +484,15 @@ function changeBackground(songPath) {
 
 
 
+function togglePlaylist(id) {
+        // Hide all song lists first
+        document.querySelectorAll(".songslist").forEach(div => {
+          div.classList.remove("active");
+        });
+        // Show clicked one
+        document.getElementById(id).classList.add("active");
+      }
+
 // Start with first song
 // playSong(currentSongIndex);
 

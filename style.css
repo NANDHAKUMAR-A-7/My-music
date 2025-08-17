@@ -123,6 +123,29 @@ li.active {
   transform: scale(1.02);
 }
 
+.playlist-card {
+        border: 2px solid #1db954;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        cursor: pointer;
+        background: #222;
+        color: white;
+        transition: 0.3s;
+      }
+      .playlist-card:hover {
+        background: #1db954;
+        color: black;
+      }
+      .songslist {
+        display: none;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      .songslist.active {
+        display: block;
+      }
+
 /* Audio Controls - Fixed at Bottom */
 #audiocon {
   position: fixed;

@@ -37,32 +37,28 @@
         </h3>
     </div>
 
-    <section>
+    <section id="playlist-container">
 
-    <div id="list1">
+    <!-- Playlist Cards -->
+      <div class="playlist-card" onclick="togglePlaylist('vijay')">
+        🎵 Vijay Hits
+      </div>
+      <div id="vijay" class="songslist">
+        <ol id="playlist1">
+          <!-- Vijay songs will be added here -->
+        </ol>
+      </div>
 
-       <div id="songslist">
-        <h1>🎵 Vijay Hits</h1>
-        <hr />
-        <br />
-        <div>
-          <ol id="playlist1">
-          </ol>
-        </div>
-      </div><br><br>
-      
-       <div id="songslist" >
-        <h1>Mixed songs</h1>
-        <hr />
-        <br />
-        <div>
-          <ol id="playlist">
-          </ol>
-        </div>
-      </div><br><br>
-      
-    </div>
-    <button id="" onclick="songfolder()">Play</button>
+      <div class="playlist-card" onclick="togglePlaylist('mixed')">
+        🎵 Mixed Songs
+      </div>
+      <div id="mixed" class="songslist">
+        <ol id="playlist">
+          <!-- Mixed songs will be added here -->
+        </ol>
+      </div>
+
+
 
     </section>
 
