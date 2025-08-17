@@ -421,21 +421,11 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   playSong(currentSongIndex);
 });
 
-// Buttons
-document.getElementById("prevBtn").addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex - 1 + songs1.length) % songs1.length;
-  playSong(currentSongIndex);
-});
-
 document.getElementById("nextBtn").addEventListener("click", () => {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
   playSong(currentSongIndex);
 });
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex + 1) % songs1.length;
-  playSong(currentSongIndex);
-});
 
 playPauseBtn.addEventListener("click", () => {
   if (player.paused) {
