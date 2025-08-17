@@ -76,12 +76,12 @@ section {
 
 /* Common active state */
 li.active {
-  color:rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
   font-weight: bold;
   transform: scale(1.1);
 }
 
-#songslist1{
+#songslist1 {
   width: 200px;
   height: 200px;
   background-position: center;
@@ -123,28 +123,107 @@ li.active {
   transform: scale(1.02);
 }
 
+#playlist-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;       /* allow horizontal scroll */
+  flex-wrap: nowrap;      /* force single row */
+  padding: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* smooth snap on scroll */
+  scrollbar-width: thin;        /* Firefox thin scrollbar */
+  scrollbar-color: #1db954 #111; /* thumb + track colors */
+}
+
+/* Chrome, Edge, Safari */
+#playlist-container::-webkit-scrollbar {
+  height: 10px;  /* horizontal scrollbar height */
+}
+#playlist-container::-webkit-scrollbar-track {
+  background: #111; 
+  border-radius: 10px;
+}
+#playlist-container::-webkit-scrollbar-thumb {
+  background: #1db954;
+  border-radius: 10px;
+}
+#playlist-container::-webkit-scrollbar-thumb:hover {
+  background: #22ff77;
+}
+
 .playlist-card {
-        border: 2px solid #1db954;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 10px;
-        cursor: pointer;
-        background: #222;
-        color: white;
-        transition: 0.3s;
-      }
-      .playlist-card:hover {
-        background: #1db954;
-        color: black;
-      }
-      .songslist {
-        display: none;
-        margin-left: 20px;
-        margin-top: 10px;
-      }
-      .songslist.active {
-        display: block;
-      }
+  flex: 0 0 auto;         /* don’t shrink */
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  border: 2px solid #1db954;
+  background: #222;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start; /* snap effect */
+}
+
+.playlist-card:hover {
+  transform: scale(1.1);  /* scale up smoothly */
+  background: #1db954;
+  color: black;
+  z-index: 5;             /* bring to front */
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  border: none;
+  color: #1db954;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background: #1db954;
+  color: black;
+}
+
+.scroll-btn.left {
+  left: 5px;
+}
+.scroll-btn.right {
+  right: 5px;
+}
+
+.playlist-card {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #1db954;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+.playlist-card:hover {
+  background: #1db954;
+  color: black;
+}
+.songslist {
+  display: none;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.songslist.active {
+  display: block;
+}
 
 /* Audio Controls - Fixed at Bottom */
 #audiocon {

@@ -368,7 +368,7 @@ function playSong(index, playlist = currentPlaylist) {
 
 function updateActiveSong() {
   // clear all highlights first
-  document.querySelectorAll("#playlist li, #playlist1 li").forEach(item => {
+  document.querySelectorAll("#playlist li, #playlist1 li").forEach((item) => {
     item.classList.remove("active");
   });
 
@@ -426,7 +426,6 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   playSong(currentSongIndex);
 });
 
-
 playPauseBtn.addEventListener("click", () => {
   if (player.paused) {
     player.play();
@@ -453,7 +452,7 @@ player.addEventListener("ended", () => {
 
 function changeBackground(songPath) {
   // clear all highlights first
-  document.querySelectorAll("#playlist li, #playlist1 li").forEach(item => {
+  document.querySelectorAll("#playlist li, #playlist1 li").forEach((item) => {
     item.classList.remove("active", "vijay-active", "musics-active");
   });
 
@@ -472,21 +471,98 @@ function changeBackground(songPath) {
   }
 }
 
-
-
 function togglePlaylist(id) {
-        // Hide all song lists first
-        document.querySelectorAll(".songslist").forEach(div => {
-          div.classList.remove("active");
-        });
-        // Show clicked one
-        document.getElementById(id).classList.add("active");
-      }
+  // Hide all song lists first
+  document.querySelectorAll(".songslist").forEach((div) => {
+    div.classList.remove("active");
+  });
+  // Show clicked one
+  document.getElementById(id).classList.add("active");
+}
 
 // Start with first song
 // playSong(currentSongIndex);
 
 // alert("Enjoy the music without ADD'S");
+
+// function scrollLeft() {
+//   document.getElementById("playlist-container").scrollBy({
+//     left: -300, // adjust scroll distance
+//     behavior: "smooth"
+//   });
+// }
+
+// function scrollRight() {
+//   document.getElementById("playlist-container").scrollBy({
+//     left: 300,
+//     behavior: "smooth"
+//   });
+// }
+
+// JS — drop this in script.js (after the DOM elements)
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("playlist-container");
+  const leftBtn = document.querySelector(".scroll-btn.left");
+  const rightBtn = document.querySelector(".scroll-btn.right");
+
+  if (!container || !leftBtn || !rightBtn) {
+    console.warn("Playlist scroll: missing elements (#playlist-container or .scroll-btn).");
+    return;
+  }
+
+  // Choose how much to scroll each click (use card width or container fraction)
+  const card = container.querySelector(".playlist-card");
+  const cardWidth = card ? card.getBoundingClientRect().width + 20 /*gap*/ : 300;
+  const scrollAmount = Math.max(200, Math.round(cardWidth * 1.2)); // tweakable
+
+  function updateButtons() {
+    // at leftmost
+    const atStart = container.scrollLeft <= 0;
+    // at rightmost (allow tiny epsilon)
+    const atEnd = Math.ceil(container.scrollLeft + container.clientWidth) >= container.scrollWidth - 1;
+
+    leftBtn.disabled = atStart;
+    rightBtn.disabled = atEnd;
+
+    leftBtn.style.opacity = leftBtn.disabled ? "0.4" : "1";
+    rightBtn.style.opacity = rightBtn.disabled ? "0.4" : "1";
+  }
+
+  leftBtn.addEventListener("click", () => {
+    // if already at start, do a tiny nudge to ensure update
+    if (container.scrollLeft <= 0) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+      updateButtons();
+      return;
+    }
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+
+    // update after animation ends (best-effort)
+    setTimeout(updateButtons, 300);
+  });
+
+  rightBtn.addEventListener("click", () => {
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    setTimeout(updateButtons, 300);
+  });
+
+  // update as user drags/scrolls manually
+  container.addEventListener("scroll", () => {
+    // throttle with requestAnimationFrame
+    if (window.requestAnimationFrame) {
+      requestAnimationFrame(updateButtons);
+    } else {
+      updateButtons();
+    }
+  });
+
+  // update on resize (card size / container size can change)
+  window.addEventListener("resize", updateButtons);
+
+  // init
+  updateButtons();
+});
+
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker

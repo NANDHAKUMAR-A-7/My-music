@@ -30,35 +30,45 @@
         <img src="images/image.png" style="width: 35px; height: 30px" /> Songs'S
       </h1>
     </header>
-    <div>
+    <br><div>
       <h3>
           <span style="color: #ff4acb">Add's</span>
           <span style="color: #00ffd5">Free Musics</span>
         </h3>
+    </div><br>
+    <div>
+      <h2>
+        <span style="color: goldenrod;">choose your playList</span>
+      </h2>
     </div>
 
     <section id="playlist-container">
+        <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
 
     <!-- Playlist Cards -->
-      <div class="playlist-card" onclick="togglePlaylist('vijay')">
-        🎵 Vijay Hits
+      <div class="playlist-card" onclick="togglePlaylist('vijay')" style="background-image: url(/My-music/images/4561868.webp); background-repeat: no-repeat; background-size: cover;font-family: monospace;color: rgb(0, 0, 0);">
+        <h1>Vijay Old Hits</h1>
       </div>
+
+      <div class="playlist-card" onclick="togglePlaylist('mixed')" style="background-image: url(images/OIP.jpeg); background-repeat:no-repeat; background-size: cover; font-family: monospace;">
+        <h1>Mixed Songs</h1>
+      </div>
+
+       <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+    </section>
+
+    <section>
       <div id="vijay" class="songslist">
         <ol id="playlist1">
           <!-- Vijay songs will be added here -->
         </ol>
       </div>
 
-      <div class="playlist-card" onclick="togglePlaylist('mixed')">
-        🎵 Mixed Songs
-      </div>
       <div id="mixed" class="songslist">
         <ol id="playlist">
           <!-- Mixed songs will be added here -->
         </ol>
       </div>
-
-
 
     </section>
 
