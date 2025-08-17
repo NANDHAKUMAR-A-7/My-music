@@ -290,29 +290,113 @@ const songs = [
   "musics/UN  MALLIYAPPOD.mp3",
   "musics/VELAKKU.mp3",
   "musics/Yamma Yamma     [s.p.b & chitra ].mp3",
-  "musics/maasamo margazhi.mp3"
-]
+  "musics/maasamo margazhi.mp3",
+];
 
+const songs1 = [
+  "VijayHits/Aadungada.mp3",
+  "VijayHits/Aal Thotta Boopathi.mp3",
+  "VijayHits/Aie Rama Rama.mp3",
+  "VijayHits/Anandham Anandham.mp3",
+  "VijayHits/Appadi Podu.mp3",
+  "VijayHits/Azahooril Poothavale.mp3",
+  "VijayHits/Barathikku Kannamma.mp3",
+  "VijayHits/Chinna Chinna.mp3",
+  "VijayHits/Coca Cola.mp3",
+  "VijayHits/Dolu Dolu.mp3",
+  "VijayHits/Ellapugazhum.mp3",
+  "VijayHits/En Chella Peru Apple.mp3",
+  "VijayHits/Enakoru Snegidhi.mp3",
+  "VijayHits/Endhan Kan Munne.mp3",
+  "VijayHits/Enna Azhagu.mp3",
+  "VijayHits/Ennai Thalaata.mp3",
+  "VijayHits/Ennavale Ennavale.mp3",
+  "VijayHits/Ennavo Ennavo.mp3",
+  "VijayHits/Innisai Paadi.mp3",
+  "VijayHits/Irupathu Kodi Nillavukal.mp3",
+  "VijayHits/Iruvathu Kodi.mp3",
+  "VijayHits/July Malargale.mp3",
+  "VijayHits/Kadhal Solvadhu.mp3",
+  "VijayHits/Kai Kai.mp3",
+  "VijayHits/Kandaangi Kandaangi.mp3",
+  "VijayHits/Kanden.mp3",
+  "VijayHits/Kanmoodi Thirakum.mp3",
+  "VijayHits/Karigalan.mp3",
+  "VijayHits/Kelamal Kaiyile.mp3",
+  "VijayHits/Kodambakkam Area.mp3",
+  "VijayHits/Maduraikku Pogathadi.mp3",
+  "VijayHits/Mambalamam Mambalam.mp3",
+  "VijayHits/Manasa Manasa.mp3",
+  "VijayHits/Mani Megalaiye Mani.mp3",
+  "VijayHits/Megamai Vanthu Pogiren.mp3",
+  "VijayHits/Minalai Pidithu.mp3",
+  "VijayHits/Mozha Mozhannu.mp3",
+  "VijayHits/Naan Adicha.mp3",
+  "VijayHits/Naan Nadanthal Athiradi.mp3",
+  "VijayHits/Nee Kaatru Naan Maram.mp3",
+  "VijayHits/Nee Kaatru Naan.mp3",
+  "VijayHits/Nee Mutham Ondru.mp3",
+  "VijayHits/Ootha Ootha Ootha Poo.mp3",
+  "VijayHits/Oru Kaditham Ezhuthinaen.mp3",
+  "VijayHits/Oru Naal Oru Kanavu.mp3",
+  "VijayHits/Oru Ponnu.mp3",
+  "VijayHits/Palaanadhu Palaanadhu.mp3",
+  "VijayHits/Pattamboochi.mp3",
+  "VijayHits/Poove Poove Pen Poove.mp3",
+  "VijayHits/Pottu Vaithu.mp3",
+  "VijayHits/Roja Poonthoddam.mp3",
+];
 
 let currentSongIndex = 0;
 const player = document.getElementById("player");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const playlistEl = document.getElementById("playlist");
+const playlistEl1 = document.getElementById("playlist1");
 
 // Load song into player
-function playSong(index) {
+function playSong(index, playlist = currentPlaylist) {
+  currentPlaylist = playlist;
   currentSongIndex = index;
-  player.src = songs[index];
+  player.src = playlist[index];
   player.play();
   updateActiveSong();
   playPauseBtn.textContent = "⏸ Pause";
+
+  // 🎨 Change background based on song name
+  changeBackground(playlist[index]);
+}
+
+function updateActiveSong() {
+  // clear all highlights first
+  document.querySelectorAll("#playlist li, #playlist1 li").forEach(item => {
+    item.classList.remove("active");
+  });
+
+  // highlight only the current song
+  let lists = currentPlaylist === songs ? playlistEl : playlistEl1;
+  let activeItem = lists.querySelectorAll("li")[currentSongIndex];
+  if (activeItem) {
+    activeItem.classList.add("active");
+  }
 }
 
 // Update active song in list
 function updateActiveSong() {
   const items = playlistEl.querySelectorAll("li");
+  const items1 = playlistEl1.querySelectorAll("li");
+
   items.forEach((item, i) => {
-    item.classList.toggle("active", i === currentSongIndex);
+    item.classList.toggle(
+      "active",
+      i === currentSongIndex && player.src.includes("musics/")
+    );
+  });
+
+  items1.forEach((item, i) => {
+    item.classList.toggle(
+      "active",
+      i === currentSongIndex && player.src.includes("VijayHits/")
+    );
   });
 }
 
@@ -320,8 +404,15 @@ function updateActiveSong() {
 songs.forEach((song, index) => {
   const li = document.createElement("li");
   li.textContent = song.split("/").pop();
-  li.addEventListener("click", () => playSong(index));
+  li.addEventListener("click", () => playSong(index, songs));
   playlistEl.appendChild(li);
+});
+
+songs1.forEach((song, index) => {
+  const li = document.createElement("li");
+  li.textContent = song.split("/").pop();
+  li.addEventListener("click", () => playSong(index, songs1));
+  playlistEl1.appendChild(li);
 });
 
 // Buttons
@@ -330,8 +421,19 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   playSong(currentSongIndex);
 });
 
+// Buttons
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex - 1 + songs1.length) % songs1.length;
+  playSong(currentSongIndex);
+});
+
 document.getElementById("nextBtn").addEventListener("click", () => {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
+  playSong(currentSongIndex);
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex + 1) % songs1.length;
   playSong(currentSongIndex);
 });
 
@@ -355,17 +457,41 @@ document.getElementById("volDownBtn").addEventListener("click", () => {
 
 // Auto play next song when one ends
 player.addEventListener("ended", () => {
-  currentSongIndex = (currentSongIndex + 1) % songs.length;
-  playSong(currentSongIndex);
+  currentSongIndex = (currentSongIndex + 1) % currentPlaylist.length;
+  playSong(currentSongIndex, currentPlaylist);
 });
 
+function changeBackground(songPath) {
+  // clear all highlights first
+  document.querySelectorAll("#playlist li, #playlist1 li").forEach(item => {
+    item.classList.remove("active", "vijay-active", "musics-active");
+  });
+
+  // find the currently playing song’s <li>
+  let activeList = currentPlaylist === songs ? playlistEl : playlistEl1;
+  let activeItem = activeList.querySelectorAll("li")[currentSongIndex];
+
+  if (activeItem) {
+    activeItem.classList.add("active");
+
+    if (songPath.includes("VijayHits/")) {
+      activeItem.classList.add("vijay-active");
+    } else if (songPath.includes("musics/")) {
+      activeItem.classList.add("musics-active");
+    }
+  }
+}
+
+
+
 // Start with first song
-playSong(currentSongIndex);
+// playSong(currentSongIndex);
 
 // alert("Enjoy the music without ADD'S");
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js")
+  navigator.serviceWorker
+    .register("service-worker.js")
     .then(() => console.log("Service Worker registered ✅"))
     .catch((err) => console.log("SW registration failed: ", err));
 }
