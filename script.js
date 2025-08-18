@@ -347,11 +347,74 @@ const songs1 = [
   "VijayHits/Roja Poonthoddam.mp3",
 ];
 
+const songs2 = [
+  "rajinihits/Aadal Kalaiye - Sri Raghavendrar - TamilWire.com.mp3",
+  "rajinihits/Aagayam Mele - Naan Vazhavaipen - TamilWire.com.mp3",
+  "rajinihits/Aasayai Katrula - Johny - TamilWire.com.mp3",
+  "rajinihits/Adada Ithuthan -  Thudikum Karangal - TamilWire.com.mp3",
+  "rajinihits/Adi Aadu - Kaali - TamilWire.com.mp3",
+  "rajinihits/Akkarai Seemai - Priya - TamilWire.com.mp3",
+  "rajinihits/Asai Nooruvagai - Adutha Varisu - TamilWire.com.mp3",
+  "rajinihits/Chittuku - Nallavanukku Nallavan - TamilWire.com.mp3",
+  "rajinihits/Darling Darling - Priya - TamilWire.com.mp3",
+  "rajinihits/En Uyir Neethane - Priya - TamilWire.com.mp3",
+  "rajinihits/En Vaanilae Orae - Johny - TamilWire.com.mp3",
+  "rajinihits/Endha Poovilum - Anbukku Naan Adimai - TamilWire.com.mp3",
+  "rajinihits/Enna Dhesamo - Un Kannil Neer Vazhinthaal - TamilWire.com.mp3",
+  "rajinihits/Gandhi Desame - Naan Sikappu Manithan - TamilWire.com.mp3",
+  "rajinihits/Jodi Killi - Padikkathavan - TamilWire.com.mp3",
+  "rajinihits/Kaadhalennum Oviyam - Gayathri - TamilWire.com.mp3",
+  "rajinihits/Kaathodu Poovura - Anbukku Naan Adimai - TamilWire.com.mp3",
+  "rajinihits/Kadavul Ullamae - Anbulla Rajinikanth - TamilWire.com.mp3",
+  "rajinihits/Kadhalin Deepam - Thambikku Entha Ooru - TamilWire.com.mp3",
+  "rajinihits/Kanmaniya Kadhal Enpathu - Aaril Irunthu 60 Varai - TamilWire.com.mp3",
+  "rajinihits/Kannil Enna - Un Kannil Neer Vazhinthaal - TamilWire.com.mp3",
+  "rajinihits/Katril Endhan - Johny - TamilWire.com.mp3",
+  "rajinihits/Maalai Soodum - Naan Mahan Alla - TamilWire.com.mp3",
+  "rajinihits/Madhanurchavam - Ellam En Kairasi - TamilWire.com.mp3",
+  "rajinihits/My Name Is Billa - Billa - TamilWire.com.mp3",
+  "rajinihits/Naan Pollathavan - Pollathavan - TamilWire.com.mp3",
+  "rajinihits/Naan Sidha Kurumbu - Moondru Mugam - TamilWire.com.mp3",
+  "rajinihits/Nadhiyoram - Annai Oor Aalaiyam - TamilWire.com.mp3",
+  "rajinihits/Ooara Therunchukitean - Padikkathavan - TamilWire.com.mp3",
+  "rajinihits/Oru Kootthukullae - Padikkathavan - TamilWire.com.mp3",
+  "rajinihits/Pattuvanna Selaikari - Engeya Ketta Kural - TamilWire.com.mp3",
+  "rajinihits/Pesa Koodathu - Adutha Varisu - TamilWire.com.mp3",
+  "rajinihits/Pon Mane - Naan Sikappu Manithan - TamilWire.com.mp3",
+  "rajinihits/Poomaalai - Thanga Magan - TamilWire.com.mp3",
+  "rajinihits/Pothukittu - Payum Puli - TamilWire.com.mp3",
+  "rajinihits/Pothuvaga En Manasu - Murattukkalai - TamilWire.com.mp3",
+  "rajinihits/Raagangal - Thillumullu - TamilWire.com.mp3",
+  "rajinihits/Raajavukku - Padikkathavan - TamilWire.com.mp3",
+  "rajinihits/Raja Enbar - Bhuvana Oru Kelvi Kuri - TamilWire.com.mp3",
+  "rajinihits/Ramanin Mohanam - Netrikan - TamilWire.com.mp3",
+  "rajinihits/Rasave Unna - Thanikkaatu Raja - TamilWire.com.mp3",
+  "rajinihits/Rathiriyil Poothirukum - Thanga Mahan - TamilWire.com.mp3",
+  "rajinihits/Santhana Kaatre - Thanikkaatu Raja - TamilWire.com.mp3",
+  "rajinihits/Santhanam Poosa - Thudikum Karangal - TamilWire.com.mp3",
+  "rajinihits/Senthaazham Poovil - Mullum Malarum - TamilWire.com.mp3",
+  "rajinihits/Snorita I Love You - Johny - TamilWire.com.mp3",
+  "rajinihits/Sri Ramanin - Priya - TamilWire.com.mp3",
+  "rajinihits/Sugam Sugame - Naan Potta Saval - TamilWire.com.mp3",
+  "rajinihits/Thangachi Sirithale - Sivappu Sooriyan - TamilWire.com.mp3",
+  "rajinihits/Thazham Poove - Kai Kodukkum Kai - TamilWire.com.mp3",
+  "rajinihits/Then Poo - Anbulla Rajinikanth - TamilWire.com.mp3",
+  "rajinihits/Thiru Theril Varum Silaiyo - Naan Vazhavaipen - TamilWire.com.mp3",
+  "rajinihits/Unnai Azhaithathu - Thaai Veedu - TamilWire.com.mp3",
+  "rajinihits/Unnaithane - Nallavanukku Nallavan - TamilWire.com.mp3",
+  "rajinihits/Va Va Vasanthamae - Pudhukkavithai - TamilWire.com.mp3",
+  "rajinihits/Varuvaai Anbae - Gharjanai - TamilWire.com.mp3",
+  "rajinihits/Vazhvey Mayama - Gayathri - TamilWire.com.mp3",
+  "rajinihits/Vellai Pura - Pudhukkavithai - TamilWire.com.mp3",
+  "rajinihits/Ven Megam - Naan Sikappu Manithan - TamilWire.com.mp3",
+  "rajinihits/Veththalaiya Potendi  - Billa - TamilWire.com.mp3"
+]
 let currentSongIndex = 0;
 const player = document.getElementById("player");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const playlistEl = document.getElementById("playlist");
 const playlistEl1 = document.getElementById("playlist1");
+const playlistEl2 = document.getElementById("playlist2");
 
 // Load song into player
 function playSong(index, playlist = currentPlaylist) {
@@ -367,23 +430,20 @@ function playSong(index, playlist = currentPlaylist) {
 }
 
 function updateActiveSong() {
-  // clear all highlights first
-  document.querySelectorAll("#playlist li, #playlist1 li").forEach((item) => {
-    item.classList.remove("active");
-  });
+  let activeList;
+  if (currentPlaylist === songs) activeList = playlistEl;
+  else if (currentPlaylist === songs1) activeList = playlistEl1;
+  else if (currentPlaylist === songs2) activeList = playlistEl2;
 
-  // highlight only the current song
-  let lists = currentPlaylist === songs ? playlistEl : playlistEl1;
-  let activeItem = lists.querySelectorAll("li")[currentSongIndex];
-  if (activeItem) {
-    activeItem.classList.add("active");
-  }
+  let activeItem = activeList?.querySelectorAll("li")[currentSongIndex];
+  if (activeItem) activeItem.classList.add("active");
 }
 
 // Update active song in list
 function updateActiveSong() {
   const items = playlistEl.querySelectorAll("li");
   const items1 = playlistEl1.querySelectorAll("li");
+  const items2 = playlistEl2.querySelectorAll("li");
 
   items.forEach((item, i) => {
     item.classList.toggle(
@@ -396,6 +456,13 @@ function updateActiveSong() {
     item.classList.toggle(
       "active",
       i === currentSongIndex && player.src.includes("VijayHits/")
+    );
+  });
+
+  items2.forEach((item, i) => {
+    item.classList.toggle(
+      "active",
+      i === currentSongIndex && player.src.includes("rajinihits/")
     );
   });
 }
@@ -413,6 +480,13 @@ songs1.forEach((song, index) => {
   li.textContent = song.split("/").pop();
   li.addEventListener("click", () => playSong(index, songs1));
   playlistEl1.appendChild(li);
+});
+
+songs2.forEach((song, index) => {
+  const li = document.createElement("li");
+  li.textContent = song.split("/").pop();
+  li.addEventListener("click", () => playSong(index, songs2));
+  playlistEl2.appendChild(li);
 });
 
 // Buttons
@@ -450,23 +524,22 @@ player.addEventListener("ended", () => {
   playSong(currentSongIndex, currentPlaylist);
 });
 
+// ✅ Background style logic
 function changeBackground(songPath) {
-  // clear all highlights first
-  document.querySelectorAll("#playlist li, #playlist1 li").forEach((item) => {
-    item.classList.remove("active", "vijay-active", "musics-active");
-  });
+  let activeList;
+  if (currentPlaylist === songs) activeList = playlistEl;
+  else if (currentPlaylist === songs1) activeList = playlistEl1;
+  else if (currentPlaylist === songs2) activeList = playlistEl2;
 
-  // find the currently playing song’s <li>
-  let activeList = currentPlaylist === songs ? playlistEl : playlistEl1;
-  let activeItem = activeList.querySelectorAll("li")[currentSongIndex];
+  let activeItem = activeList?.querySelectorAll("li")[currentSongIndex];
 
   if (activeItem) {
-    activeItem.classList.add("active");
-
     if (songPath.includes("VijayHits/")) {
       activeItem.classList.add("vijay-active");
     } else if (songPath.includes("musics/")) {
       activeItem.classList.add("musics-active");
+    } else if (songPath.includes("RajiniHits19751985TamilSongs/")) {
+      activeItem.classList.add("rajini-hits-active");
     }
   }
 }

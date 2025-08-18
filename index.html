@@ -1,91 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Music</title>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Web Music</title>
 
-  <!-- Favicon & PWA -->
-  <link rel="icon" href="images/image.png" />
-  <link rel="manifest" href="manifest.json" />
+      <!-- Favicon & PWA -->
+      <link rel="icon" href="images/image.png" />
+      <link rel="manifest" href="manifest.json" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+      <!-- Styles -->
+      <link rel="stylesheet" href="style.css" />
 
-  <!-- Theme Colors -->
-  <!-- Default -->
-  <meta name="theme-color" content="#111111">
-  <!-- Light Mode -->
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-  <!-- Dark Mode -->
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
-</head>
+      <!-- Theme Colors -->
+      <!-- Default -->
+      <meta name="theme-color" content="#111111" />
+      <!-- Light Mode -->
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: light)"
+        content="#ffffff"
+      />
+      <!-- Dark Mode -->
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: dark)"
+        content="#000000"
+      />
 
-
+      <!-- fontawesome -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      />
+    </head>
   </head>
   <body>
     <header>
       <h1>
-        <img src="images/image.png" style="width: 35px; height: 30px" /> Songs'S
+        <i class="fa-solid fa-compact-disc" style="color: green;"></i>
+        Songs'S
       </h1>
     </header>
-    <br><div>
+    <br />
+    <div>
       <h3>
-          <span style="color: #ff4acb">Add's</span>
-          <span style="color: #00ffd5">Free Musics</span>
-        </h3>
-    </div><br>
+        <span style="color: #ff4acb">Add's</span>
+        <span style="color: #00ffd5">Free Musics</span>
+        <i
+          class="fa-solid fa-guitar"
+          style="font-weight: 900; font-size: 20px;"
+        ></i>
+      </h3>
+    </div>
+    <br />
     <div>
       <h2>
-        <span style="color: goldenrod;">choose your playList</span>
+        <span style="color: goldenrod">choose your playList </span>
+        <i class="fa-solid fa-wave-square" style="color: green;"></i>
+        
       </h2>
     </div>
 
     <section id="playlist-container">
-        <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+      <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
 
-    <!-- Playlist Cards -->
-      <div class="playlist-card" onclick="togglePlaylist('vijay')" style="background-image: url(/My-music/images/4561868.webp); background-repeat: no-repeat; background-size: cover;font-family: monospace;color: rgb(0, 0, 0);">
-        <h1>Vijay Old Hits</h1>
+      <!-- Playlist Cards -->
+      <div
+        class="playlist-card"
+        onclick="togglePlaylist('vijay')"
+        style="
+          background-image: url(/My-music/images/4561868.webp);
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-family: monospace;
+          color: rgb(0, 0, 0);
+        "
+      >
+        <h1 id="playlisttitle">Vijay Old Hits</h1>
+        <i class="fa-solid fa-headphones"></i>
       </div>
 
-      <div class="playlist-card" onclick="togglePlaylist('mixed')" style="background-image: url(images/OIP.jpeg); background-repeat:no-repeat; background-size: cover; font-family: monospace;">
-        <h1>Mixed Songs</h1>
+      <div
+        class="playlist-card"
+        onclick="togglePlaylist('mixed')"
+        style="
+          background-image: url(images/OIP.jpeg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-family: monospace;
+        "
+      >
+        <h1 id="playlisttitle">Mixed songs</h1>
+        <br />
+        <i class="fa-solid fa-headphones"></i>
       </div>
 
-       <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+      <div
+        class="playlist-card"
+        onclick="togglePlaylist('rajinihits')"
+        style="
+          background-image: url(images/rajini.jpeg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-family: monospace;
+        "
+      >
+        <h1 id="playlisttitle">Rajini Hits</h1>
+        <br />
+        <i class="fa-solid fa-headphones"></i>
+      </div>
+
+      <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
     </section>
 
     <section>
-      <div id="vijay" class="songslist">
+      <div id="vijay" class="songslist" style="background-color: black">
         <ol id="playlist1">
           <!-- Vijay songs will be added here -->
         </ol>
       </div>
 
-      <div id="mixed" class="songslist">
+      <div id="mixed" class="songslist" style="background-color: black">
         <ol id="playlist">
           <!-- Mixed songs will be added here -->
         </ol>
       </div>
 
+      <div id="rajinihits" class="songslist" style="background-color: black">
+        <ol id="playlist2">
+          <!-- Mixed songs will be added here -->
+        </ol>
+      </div>
     </section>
 
     <!-- Audio Controls Fixed Bottom -->
     <div id="audiocon">
       <div class="controls" id="controls">
-        <button id="prevBtn">⏮ Prev</button>
-        <button id="playPauseBtn">▶ Play</button>
-        <button id="nextBtn">⏭ Next</button>
-        <button id="volUpBtn">🔊 Vol +</button>
-        <button id="volDownBtn">🔉 Vol -</button>
+        <button id="prevBtn"><i class="fas fa-backward"></i></button>
+        <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+        <button id="nextBtn"><i class="fas fa-forward"></i></button>
+        <button id="volUpBtn"><i class="fas fa-volume-up"></i></button>
+        <button id="volDownBtn"><i class="fas fa-volume-down"></i></button>
       </div>
-      <audio id="player" controls></audio>
+
+      <audio id="player" controls style="width: 400px; height: 40px"></audio>
     </div>
 
     <footer>
-      <h3>@ Thanks for Listening ...</h3>
+      <h3>@ Thanks for Listening ... <i class= "fa-solid fa-file-audio"></i></h3>
       <h4>We will add more songs in future</h4>
       <p>
         <img src="images/image.png" style="width: 100px; height: 100px" />
